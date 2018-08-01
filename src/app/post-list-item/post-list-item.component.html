@@ -1,0 +1,19 @@
+
+    <li class="li" [ngClass]= '{"list-group-item":true,
+                     "list-group-item-danger" : (postLove < 0),
+                     "list-group-item-success": (postLove > 0)
+                     }' 
+                    >
+            <div class="d-flex w-80 justify-content-between "> 
+              <h3> {{ postListTitre }} </h3> 
+              <small class="h5"> {{ postListDate |date: 'd/M/yyyy, h:mm a'  }} </small>
+            </div>
+            <p class="mb-1"> {{ postListContenu }} </p>
+            <div class="d-flex w-80 justify-content-between">
+              <div>
+                  <button type="button" class="btn btn-success" (click)="loveIncremente(posts)">love it !!!</button>
+                  <button type="button" class="btn btn-danger" (click)="loveDecremente(posts)">don't love it !!!</button>
+              </div>
+              <button type="button" class="btn btn-danger pull-right" (click)="onDeletePost(posts)"> Supprimer post</button>
+            </div>
+   </li>
